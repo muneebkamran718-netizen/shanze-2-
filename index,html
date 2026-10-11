@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +14,6 @@
   --yellow: #ffce62;
   --gold: #c18a36;
   --brown: #684019;
-  --soft: #f7e5b9;
-  --white: #fffdf5;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -27,7 +24,6 @@ body {
   font-family: 'Cormorant Garamond', serif;
   text-align: center;
 }
-button, a { -webkit-tap-highlight-color: transparent; }
 button {
   cursor: pointer;
   font-family: 'Playfair Display', serif;
@@ -47,14 +43,14 @@ button.secondary {
   background: #fff8e6;
   border-color: #e8c994;
 }
-h1, h2, h3 {
+h1, h2 {
   font-family: 'Playfair Display', serif;
   font-weight: 500;
 }
 h1 { font-size: clamp(35px, 7vw, 58px); margin: 10px 0; }
 h2 { font-size: clamp(27px, 5vw, 39px); }
 p { line-height: 1.65; }
-section { padding: 65px 20px; }
+section { padding: 55px 20px; }
 .hidden { display: none !important; }
 .eyebrow {
   font-size: 14px;
@@ -76,23 +72,23 @@ section { padding: 65px 20px; }
     var(--cream);
 }
 .hero:before {
-  content: "🌻  ✨  💛  🌼  ✨  🌻";
+  content: "🌻 ✨ 💛 🌼 ✨ 🌻";
   position: absolute;
   top: 22px;
   left: 0;
   width: 100%;
   font-size: clamp(18px, 4vw, 30px);
-  letter-spacing: 10px;
+  letter-spacing: 7px;
   opacity: .75;
 }
 .hero:after {
-  content: "🌼  💛  🌻  ✨  🌼";
+  content: "🌼 💛 🌻 ✨ 🌼";
   position: absolute;
   bottom: 22px;
   left: 0;
   width: 100%;
   font-size: clamp(18px, 4vw, 30px);
-  letter-spacing: 8px;
+  letter-spacing: 7px;
   opacity: .75;
 }
 .hero-content {
@@ -126,7 +122,7 @@ section { padding: 65px 20px; }
   padding: clamp(24px, 5vw, 48px);
   border: 1px solid #efd08d;
   border-radius: 25px;
-  background: #fffdf3d9;
+  background: #fffdf3e8;
   box-shadow: 0 12px 35px #8b5d1710;
 }
 .panda { font-size: 65px; }
@@ -167,10 +163,7 @@ section { padding: 65px 20px; }
   border-radius: 12px;
   box-shadow: 0 8px 24px #69471910;
 }
-.letter-paper p { margin: 0 0 18px; }
-.song-section {
-  background: #fffdf5;
-}
+.song-section { background: #fffdf5; }
 .song-card {
   max-width: 580px;
   margin: 25px auto;
@@ -192,7 +185,7 @@ section { padding: 65px 20px; }
   border: 5px solid #fff8e6;
   box-shadow: 0 8px 25px #a9762725;
 }
-.song-link { text-decoration: none; display: inline-block; margin-top: 18px; }
+audio { max-width: 100%; }
 .proposal {
   min-height: 80vh;
   display: flex;
@@ -205,7 +198,7 @@ section { padding: 65px 20px; }
 .proposal .panel { width: 100%; }
 .question { font-size: 27px; font-style: italic; }
 #finalMessage {
-  font-size: 25px;
+  font-size: 23px;
   margin-top: 30px;
   line-height: 1.7;
 }
@@ -221,7 +214,7 @@ footer { padding: 24px; font-size: 15px; color: #a17a42; }
   to { transform: translateY(-220px) scale(1.5); opacity: 0; }
 }
 @media (max-width: 520px) {
-  section { padding: 45px 15px; }
+  section { padding: 40px 15px; }
   .subtitle { font-size: 20px; }
   .buttons button { min-width: 125px; }
   .letter-paper { font-size: 18px; }
@@ -231,7 +224,7 @@ footer { padding: 24px; font-size: 15px; color: #a17a42; }
 
 <body>
 
-<!-- SCREEN 1: THE FIRST QUESTION -->
+<!-- SCREEN 1: FIRST QUESTION -->
 <section class="hero" id="welcome">
   <div class="hero-content">
     <div class="sunflower">🌻</div>
@@ -244,12 +237,11 @@ footer { padding: 24px; font-size: 15px; color: #a17a42; }
       <button onclick="goToLetter()">YES ❤️</button>
       <button class="secondary" onclick="firstNo()">NO 🙈</button>
     </div>
-
     <p class="notice" id="firstNotice"></p>
   </div>
 </section>
 
-<!-- SCREEN 2: THE LETTER -->
+<!-- SCREEN 2: LETTER -->
 <section class="letter-section hidden" id="letterSection">
   <div class="panel">
     <div class="panda">🐼🌻</div>
@@ -274,25 +266,26 @@ footer { padding: 24px; font-size: 15px; color: #a17a42; }
   </div>
 </section>
 
-<!-- SCREEN 3: AIQ SONG -->
+<!-- SCREEN 3: THE NIGHT WE MET -->
 <section class="song-section hidden" id="songSection">
   <div class="panel">
-    <div class="panda">🐼🎶</div>
+    <div class="panda">🐼🌙</div>
     <div class="eyebrow">chapter two · press play</div>
     <h2>a song for my girl 💛</h2>
     <p class="small-note">some songs say the things we can't.</p>
 
     <div class="song-card">
-      <div class="album-art">🌻</div>
-      <h2>AIQ 🎵</h2>
-      <p class="subtitle">our song, our little world.</p>
-      <p>close your eyes for a second and just listen, baby. ♡</p>
+      <div class="album-art">🌙💛</div>
+      <h2>The Night We Met</h2>
+      <p class="subtitle">Lord Huron 🎵</p>
+      <p>for the memories, for us, and for another chance. ❤️</p>
 
-      <!-- Replace the link below with your actual AIQ song link -->
-      <a class="song-link" href="https://www.youtube.com/results?search_query=AIQ+song"
-         target="_blank" rel="noopener">
-        <button>play our song ▶</button>
-      </a>
+      <audio controls preload="metadata" style="width:100%; margin-top:20px;">
+        <source src="Lord%20Huron%20-%20The%20Night%20We%20Met%20%28Official%20Audio%29.mp3" type="audio/mpeg">
+        Your browser does not support audio playback.
+      </audio>
+
+      <p class="small-note">listen with your heart, baby. 🌙</p>
     </div>
 
     <p class="small-note">“maybe we can start again, a little better this time.”</p>
@@ -302,7 +295,7 @@ footer { padding: 24px; font-size: 15px; color: #a17a42; }
   </div>
 </section>
 
-<!-- SCREEN 4: THE PATCH-UP PROPOSAL -->
+<!-- SCREEN 4: PATCH-UP PROPOSAL -->
 <section class="proposal hidden" id="proposalSection">
   <div class="panel">
     <div class="panda">🐼💛🐼</div>
@@ -327,11 +320,6 @@ footer { padding: 24px; font-size: 15px; color: #a17a42; }
 <footer>made with love, a little courage, and a whole lot of 🌻 for shanze. ❤️</footer>
 
 <script>
-/*
-  YOUR LETTER IS SAVED RIGHT HERE.
-  Change the words whenever you want.
-  After you commit this file on GitHub, the letter will be there for visitors.
-*/
 const MY_LETTER = `goodmorning love ❤️ im actually shivering while writing this 😭 anwsss i just wanna say im sorry for my part in everything. ik i cant take back what happened and i wish i could, but i cant. all i can do is own up to my mistakes and try to make things right. i genuinely couldnt think of a better idea than this so yeah here goes nothing 😭
 
 ik things havent been perfect on our end and we both have our own hurt, our complaints and things we wish were different, but i genuinely believe we can work through it. ik we both know eachother pretty well and i dont wanna believe that this is where our story ends. i miss you man, i miss having my girl around, i miss talking to you about random shit, annoying you, telling you everything and just having you there. i miss us shanze, like genuinely. and i dont think i realised how much until now.
@@ -372,7 +360,9 @@ function goToLetter() {
 function openLetter() {
   document.getElementById("envelope").classList.add("hidden");
   document.getElementById("letterContent").classList.remove("hidden");
-  document.getElementById("letterContent").scrollIntoView({ behavior: "smooth", block: "start" });
+  document.getElementById("letterContent").scrollIntoView({
+    behavior: "smooth", block: "start"
+  });
   burstHearts();
 }
 
@@ -392,6 +382,7 @@ function proposalNo() {
 function proposalYes() {
   document.getElementById("proposalButtons").classList.add("hidden");
   document.getElementById("proposalNotice").classList.add("hidden");
+
   const final = document.getElementById("finalMessage");
   final.classList.remove("hidden");
   final.innerHTML =
@@ -402,6 +393,7 @@ function proposalYes() {
     "and show you through my actions how much you mean to me.<br><br>" +
     "come here, my girl 🫂💋<br>" +
     "I LOVE YOUUUUU ❤️🐼🌻";
+
   burstHearts();
   setInterval(burstHearts, 900);
 }
